@@ -7,19 +7,22 @@
     <img fxFlex src="../../../assets/Nidhogg.png" class="logo" />
   </div>
   <div fxHide.xs>
-    <a href="" class="toolbar-title">Needhog</a>
+    <a [routerLink]="['/welcome']" class="toolbar-title">Needhogg</a>
   </div>
   <!-- Botones barra-->
   <div fxFlex fxLayoutAlign="end" fxHide.xs>
     <ul fxLayout fxLayoutGap="50px" class="navigation-item">
       <li>
-        <a href="">Mounts</a>
+        <a [routerLink]="['/welcome']">Home</a>
       </li>
       <li>
-        <a href="">Minions</a>
+        <a [routerLink]="['/mounts']">Mounts</a>
       </li>
       <li>
-        <a href="">Contact</a>
+        <a [routerLink]="['/minions']">Minions</a>
+      </li>
+      <li>
+        <a [routerLink]="['/contact']">Contact</a>
       </li>
     </ul>
   </div>

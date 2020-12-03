@@ -1,0 +1,10 @@
+.mount-grid {
+  box-sizing: border-box;
+  padding-top: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.search-div {
+  padding: 30px;
+}

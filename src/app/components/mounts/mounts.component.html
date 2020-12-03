@@ -1,0 +1,19 @@
+<div class="search-div" fxLayout="column" fxLayoutAlign="center center">
+  <app-filters></app-filters>
+  <app-search-bar></app-search-bar>
+</div>
+<div
+  class="mount-grid"
+  fxLayout="row wrap"
+  fxLayoutAlign="center"
+  fxLayoutGap="30px grid"
+>
+  <app-mount-card
+    fxFlex="15"
+    fxFlex.md="50"
+    fxFlex.xs="50"
+    fxLayout="stretch"
+    *ngFor="let mount of mounts"
+    [mount]="mount"
+  ></app-mount-card>
+</div>

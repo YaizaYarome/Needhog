@@ -1,13 +1,17 @@
 <mat-nav-list>
-  <a mat-list-item (click)="onSidenavClose()">
+  <a [routerLink]="['/welcome']" mat-list-item (click)="onSidenavClose()">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+  </a>
+  <a [routerLink]="['/mounts']" mat-list-item (click)="onSidenavClose()">
     <i class="fas fa-dragon"></i>
     <span>Mounts</span>
   </a>
-  <a mat-list-item (click)="onSidenavClose()">
+  <a [routerLink]="['/minions']" mat-list-item (click)="onSidenavClose()">
     <i class="fas fa-cat"></i>
     <span>Minions</span>
   </a>
-  <a mat-list-item (click)="onSidenavClose()">
+  <a [routerLink]="['/contact']" mat-list-item (click)="onSidenavClose()">
     <i class="fas fa-paper-plane"></i>
     <span>Contact</span>
   </a>

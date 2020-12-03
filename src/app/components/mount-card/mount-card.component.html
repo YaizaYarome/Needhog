@@ -1,0 +1,25 @@
+<mat-card
+  class="card-item mat-elevation-30"
+  fxLayout="column"
+  fxLayoutAlign="space-between stretch"
+>
+  <mat-card-title class="card-title">
+    <span fxFlex="20">{{ mount.id }} </span>
+    <span fxFlex="65">{{ mount.name }}</span>
+  </mat-card-title>
+
+  <img mat-card-image src="{{ mount.image }}" />
+
+  <mat-card-content fxLayout="space-between stretch">
+    <p class="tooltip-quote">
+      <q> {{ mount.tooltip }}</q>
+    </p>
+    <p>{{ mount.description }}</p>
+    <p>How to obtain: {{ mount.sources }}</p>
+    <p class="patch">Patch: {{ mount.patch }}</p>
+  </mat-card-content>
+  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between stretch">
+    <i class="fas fa-ban"></i>
+    <i class="fas fa-heart"></i>
+  </mat-card-actions>
+</mat-card>

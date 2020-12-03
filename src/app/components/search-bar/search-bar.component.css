@@ -1,0 +1,19 @@
+mat-card {
+  background-color: black;
+  border-radius: 80px;
+  margin-top: 15px;
+}
+
+mat-card i {
+  color: white;
+}
+.searchbar {
+  width: auto;
+}
+
+.searchbar-bar {
+  width: 80%;
+  background-color: black;
+  color: white;
+  border: none;
+}

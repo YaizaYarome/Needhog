@@ -1,0 +1,17 @@
+.filter-container {
+  width: 100vh;
+  height: 200px;
+  background-color: rgb(47, 38, 51);
+}
+
+.dropdown-menu {
+  width: 12vw;
+}
+
+.active-filter-bg {
+  background-color: teal !important;
+}
+
+.active-filter-text {
+  color: white;
+}

@@ -1,0 +1,19 @@
+<mat-card
+  class="filter-container"
+  fxLayout="row"
+  fxLayoutAlign="end start"
+  fxLayoutGap="10px"
+>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Expansions </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-selection-list>
+        <mat-list-option *ngFor="let expansion of expansions">
+          {{ expansion }}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
