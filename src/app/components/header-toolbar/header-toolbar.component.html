@@ -1,0 +1,26 @@
+<mat-toolbar fxLayoutGap="10px" class="main-toolbar">
+  <!-- Control lateral-->
+  <div fxHide.gt-xs>
+    <button (click)="onToggleSidenav()">Menu</button>
+  </div>
+  <div>
+    <img fxFlex src="../../../assets/Nidhogg.png" class="logo" />
+  </div>
+  <div fxHide.xs>
+    <a href="" class="toolbar-title">Needhog</a>
+  </div>
+  <!-- Botones barra-->
+  <div fxFlex fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="25px" class="navigation-item">
+      <li>
+        <a href="">Mounts</a>
+      </li>
+      <li>
+        <a href="">Minions</a>
+      </li>
+      <li>
+        <a href="">Contact</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

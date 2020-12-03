@@ -1,0 +1,33 @@
+.main-toolbar {
+  background-color: rgb(62, 62, 100);
+  color: white;
+  font-size: 18px;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: rgb(183, 179, 230);
+}
+
+.navigation-item {
+  list-style-type: none;
+}
+
+button {
+  all: unset;
+}
+
+.logo {
+  width: 100px;
+}
+
+.toolbar-title {
+  font-size: 28px;
+  font-variant: small-caps;
+  letter-spacing: 4px;
+}
