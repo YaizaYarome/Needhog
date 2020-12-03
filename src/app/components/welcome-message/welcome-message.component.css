@@ -1,0 +1,29 @@
+.welcome-message {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+  font-variant: small-caps;
+  color: white;
+  line-height: 40px;
+  padding: 40px;
+  width: 100%;
+}
+
+.welcome-message img {
+  box-shadow: 5px 6px 6px 1px black;
+  width: 40%;
+  min-width: 380px;
+  border-radius: 20px;
+}
+
+.welcome-text {
+  background-color: rgb(21, 21, 34);
+  padding: 30px;
+  border-radius: 20px;
+}
+.welcome-message-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(224, 130, 42);
+  text-shadow: #000000 3px 5px 2px;
+}

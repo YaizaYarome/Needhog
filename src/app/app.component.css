@@ -10,4 +10,5 @@ mat-sidenav {
 
 mat-sidenav-content {
   background-color: rgb(53, 43, 68);
+  background-image: url("../assets/bg.jpg");
 }

@@ -8,9 +8,15 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderToolbarComponent } from './components/header-toolbar/header-toolbar.component';
 import { SideNavListComponent } from './components/side-nav-list/side-nav-list.component';
+import { WelcomeMessageComponent } from './components/welcome-message/welcome-message.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderToolbarComponent, SideNavListComponent],
+  declarations: [
+    AppComponent,
+    HeaderToolbarComponent,
+    SideNavListComponent,
+    WelcomeMessageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
