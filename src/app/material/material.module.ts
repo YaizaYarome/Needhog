@@ -8,6 +8,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSelectModule } from '@angular/material/select';
 
 const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
 
@@ -24,6 +25,7 @@ const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
     MatExpansionModule,
     MatFormFieldModule,
     MatAutocompleteModule,
+    MatSelectModule,
   ],
   exports: [
     MaterialComponents,
@@ -36,6 +38,7 @@ const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
     MatExpansionModule,
     MatFormFieldModule,
     MatAutocompleteModule,
+    MatSelectModule,
   ],
 })
 export class MaterialModule {}

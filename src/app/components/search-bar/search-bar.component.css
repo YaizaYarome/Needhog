@@ -16,4 +16,5 @@ mat-card i {
   background-color: black;
   color: white;
   border: none;
+  z-index: 0;
 }

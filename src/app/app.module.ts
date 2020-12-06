@@ -20,6 +20,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { FiltersComponent } from './components/filters/filters.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FilterTagsComponent } from './component/filter-tags/filter-tags.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SearchBarComponent,
     FiltersComponent,
     ContactFormComponent,
+    FilterTagsComponent,
   ],
 
   imports: [
@@ -47,6 +50,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

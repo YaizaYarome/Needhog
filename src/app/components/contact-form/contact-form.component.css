@@ -1,0 +1,69 @@
+.text-danger {
+  color: rgb(250, 103, 213);
+}
+
+label {
+  color: rgb(201, 158, 79);
+  font-size: 1.4rem;
+}
+
+.field {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+
+  background-color: rgb(187, 179, 233);
+}
+
+mat-form-field {
+  padding: 2%;
+  height: 40px;
+  border-radius: 20px;
+  width: 50%;
+  background-color: rgb(187, 179, 233);
+}
+
+mat-option {
+  background-color: rgb(187, 179, 233) !important;
+  border-bottom: 1px solid rgb(156, 100, 170) !important;
+}
+
+mat-option:hover {
+  background-color: orange !important;
+}
+
+textarea {
+  min-width: 100%;
+  min-height: 180px;
+  border-radius: 10px;
+  font-family: sans-serif;
+  padding: 10px;
+  border: none;
+  font-size: 0.9rem;
+  background-color: rgb(187, 179, 233);
+}
+
+.short-fields {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 900px;
+}
+
+.button-form {
+  padding: 10px;
+  width: 100px;
+  border-radius: 80px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-variant: small-caps;
+  border: none;
+}
+
+.button-form:hover {
+  background-color: orange;
+}

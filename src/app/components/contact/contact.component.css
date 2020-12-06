@@ -1,0 +1,27 @@
+.container {
+  background: linear-gradient(
+    0deg,
+    rgba(66, 60, 99, 1) 0%,
+    rgba(28, 21, 46, 1) 100%
+  );
+  margin: 30px 210px;
+  padding: 50px;
+  border-radius: 30px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: orange;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1rem;
+  color: white;
+}
+
+h5 {
+  color: rgb(143, 128, 150);
+  font-size: 0.8rem;
+}
