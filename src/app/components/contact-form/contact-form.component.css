@@ -21,10 +21,12 @@ input {
 }
 
 mat-form-field {
-  padding: 2%;
   height: 40px;
   border-radius: 20px;
   width: 50%;
+  padding-top: 1px;
+  padding-bottom: 10px;
+  padding-left: 20px;
   background-color: rgb(187, 179, 233);
 }
 
@@ -62,8 +64,16 @@ textarea {
   font-size: 20px;
   font-variant: small-caps;
   border: none;
+  background-color: black;
+  color: white;
 }
 
-.button-form:hover {
-  background-color: orange;
+.button-form:disabled {
+  background-color: grey;
+  color: darkgrey;
+}
+
+.button-form:enabled:hover {
+  background-color: purple;
+  color: white;
 }

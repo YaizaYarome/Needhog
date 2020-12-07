@@ -21,7 +21,8 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FilterTagsComponent } from './component/filter-tags/filter-tags.component';
+import { FilterTagsComponent } from './components/filter-tags/filter-tags.component';
+import { MinionCardComponent } from './components/minion-card/minion-card.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FilterTagsComponent } from './component/filter-tags/filter-tags.compone
     FiltersComponent,
     ContactFormComponent,
     FilterTagsComponent,
+    MinionCardComponent,
   ],
 
   imports: [

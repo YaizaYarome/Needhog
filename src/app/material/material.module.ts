@@ -9,6 +9,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
 
@@ -26,6 +28,8 @@ const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
     MatFormFieldModule,
     MatAutocompleteModule,
     MatSelectModule,
+    MatCheckboxModule,
+    MatRadioModule,
   ],
   exports: [
     MaterialComponents,
@@ -39,6 +43,8 @@ const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
     MatFormFieldModule,
     MatAutocompleteModule,
     MatSelectModule,
+    MatCheckboxModule,
+    MatRadioModule,
   ],
 })
 export class MaterialModule {}

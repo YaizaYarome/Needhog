@@ -1,1 +1,18 @@
-<p>minions works!</p>
+<div class="search-div" fxLayout="column" fxLayoutAlign="center center">
+  <app-filters></app-filters>
+</div>
+<div
+  class="mount-grid"
+  fxLayout="row wrap"
+  fxLayoutAlign="center"
+  fxLayoutGap="30px grid"
+>
+  <app-minion-card
+    fxFlex="15"
+    fxFlex.md="50"
+    fxFlex.xs="50"
+    fxLayout="stretch"
+    *ngFor="let minion of minions"
+    [mount]="minion"
+  ></app-minion-card>
+</div>

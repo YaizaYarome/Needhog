@@ -1,0 +1,21 @@
+.filter-h2 {
+  margin: 10px;
+}
+
+.filter-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.filter-margin {
+  margin: 0 10px;
+}
+
+.showOnly,
+.filters {
+  background-color: transparent;
+  border: none;
+  color: white;
+}

@@ -1,0 +1,43 @@
+<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-evenly">
+  <mat-card class="filters">
+    <h2 class="filter-h2">Filters</h2>
+    <mat-card-content
+      fxLayout="row"
+      fxLayoutGap="20px"
+      fxLayoutAlign="space-evenly center"
+    >
+      <section class="filter-section">
+        <label class="filter-margin">Align:</label>
+        <mat-radio-group color="primary" [(ngModel)]="labelPosition">
+          <mat-radio-button class="filter-margin" value="1"
+            >Alphabetical</mat-radio-button
+          >
+          <mat-radio-button class="filter-margin" value="2"
+            >Release date</mat-radio-button
+          >
+          <mat-radio-button class="filter-margin" value="3"
+            >Number</mat-radio-button
+          >
+        </mat-radio-group>
+      </section>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="showOnly">
+    <mat-card-content>
+      <h2 class="filter-h2">Show Only</h2>
+
+      <section class="filter-section">
+        <mat-checkbox color="warn" class="filter-margin" [(ngModel)]="checked">
+          Favorites
+        </mat-checkbox>
+        <mat-checkbox
+          color="accent"
+          class="filter-margin"
+          [(ngModel)]="unchecked"
+        >
+          Discarded
+        </mat-checkbox>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div>

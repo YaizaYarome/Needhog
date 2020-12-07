@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-filter-tags',
   templateUrl: './filter-tags.component.html',
-  styleUrls: ['./filter-tags.component.css']
+  styleUrls: ['./filter-tags.component.css'],
 })
 export class FilterTagsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
+  checked = false;
+  unchecked = true;
+  labelPosition: 'before' | 'after' = 'after';
 }

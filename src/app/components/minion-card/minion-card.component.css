@@ -1,0 +1,38 @@
+.card-item {
+  background: linear-gradient(
+    180deg,
+    rgb(0, 0, 0) 28%,
+    rgb(94, 50, 33) 70%,
+    rgb(145, 124, 117) 100%
+  );
+  color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px 3px #0e0b0b;
+}
+.card-title {
+  font-size: 20px;
+}
+
+i {
+  font-size: 20px;
+  padding: 10px;
+}
+
+i:hover {
+  color: red;
+}
+
+.tooltip-quote {
+  text-align: right;
+  font-style: italic;
+}
+
+span {
+  padding: 1px 10px;
+}
+
+.patch {
+  width: 100%;
+  text-align: right;
+  font-weight: bold;
+}

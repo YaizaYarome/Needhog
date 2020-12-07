@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MinionsComponent } from './minions.component';
+import { MinionCardComponent } from './minion-card.component';
 
-describe('MinionsComponent', () => {
-  let component: MinionsComponent;
-  let fixture: ComponentFixture<MinionsComponent>;
+describe('MinionCardComponent', () => {
+  let component: MinionCardComponent;
+  let fixture: ComponentFixture<MinionCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MinionsComponent],
+      declarations: [MinionCardComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MinionsComponent);
+    fixture = TestBed.createComponent(MinionCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

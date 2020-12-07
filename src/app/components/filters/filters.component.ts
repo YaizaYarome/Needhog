@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-filters',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filters.component.css'],
 })
 export class FiltersComponent implements OnInit {
+  expansionsList = new FormControl();
   expansions: string[] = [
     'A Realm Reborn',
     'Heavensward',
