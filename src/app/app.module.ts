@@ -16,12 +16,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MountCardComponent } from './components/mount-card/mount-card.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FilterTagsComponent } from './components/filter-tags/filter-tags.component';
 import { MinionCardComponent } from './components/minion-card/minion-card.component';
 
 @NgModule({
@@ -35,10 +33,8 @@ import { MinionCardComponent } from './components/minion-card/minion-card.compon
     ContactComponent,
     WelcomeComponent,
     MountCardComponent,
-    SearchBarComponent,
     FiltersComponent,
     ContactFormComponent,
-    FilterTagsComponent,
     MinionCardComponent,
   ],
 

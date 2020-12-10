@@ -11,6 +11,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule } from '@angular/material/core';
 
 const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
 
@@ -30,6 +33,9 @@ const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatChipsModule,
+    MatButtonModule,
+    MatRippleModule,
   ],
   exports: [
     MaterialComponents,
@@ -45,6 +51,9 @@ const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatChipsModule,
+    MatButtonModule,
+    MatRippleModule,
   ],
 })
 export class MaterialModule {}

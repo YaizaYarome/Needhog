@@ -1,17 +1,91 @@
+<!-- Filters-->
 <mat-card class="filter-container" fxLayout="row" fxLayoutGap="50px">
-  <app-filter-tags></app-filter-tags>
-  <div fxLayout="column" fxLayoutAlign="space-between">
-    <mat-form-field appearance="fill">
-      <mat-label>Expansions</mat-label>
-      <mat-select [formControl]="expansionsList" multiple>
-        <mat-select-trigger *ngIf="expansionsList.value?.length > 1">
-          {{ expansionsList.value.length }} selected
-        </mat-select-trigger>
-        <mat-option *ngFor="let expansion of expansions">
-          {{ expansion }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <app-search-bar></app-search-bar>
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-evenly">
+    <mat-card class="filters">
+      <h2 class="filter-h2">Filters</h2>
+      <mat-card-content
+        fxLayout="row"
+        fxLayoutGap="20px"
+        fxLayoutAlign="space-evenly center"
+      >
+        <section class="filter-section">
+          <label class="filter-margin">Align:</label>
+          <mat-radio-group color="primary" [(ngModel)]="labelPosition">
+            <mat-radio-button class="filter-margin" value="1"
+              >Alphabetical</mat-radio-button
+            >
+            <mat-radio-button class="filter-margin" value="2"
+              >Release date</mat-radio-button
+            >
+            <mat-radio-button class="filter-margin" value="3"
+              >Number</mat-radio-button
+            >
+          </mat-radio-group>
+        </section>
+        <section>
+          <mat-form-field appearance="fill">
+            <mat-label>Expansions</mat-label>
+            <mat-select [formControl]="expansionsList" multiple>
+              <mat-select-trigger *ngIf="expansionsList.value?.length > 1">
+                {{ expansionsList.value.length }} selected
+              </mat-select-trigger>
+              <mat-option *ngFor="let expansion of expansions">
+                {{ expansion }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Show only -->
+    <mat-card class="showOnly">
+      <mat-card-content>
+        <h2 class="filter-h2">Show Only</h2>
+
+        <section class="filter-section">
+          <mat-checkbox
+            color="warn"
+            class="filter-margin"
+            [(ngModel)]="checked"
+          >
+            Favorites
+          </mat-checkbox>
+          <mat-checkbox
+            color="accent"
+            class="filter-margin"
+            [(ngModel)]="unchecked"
+          >
+            Discarded
+          </mat-checkbox>
+        </section>
+      </mat-card-content>
+    </mat-card>
   </div>
 </mat-card>
+
+<div fxLayout="column" fxLayoutAlign="space-between">
+  <!-- Search Bar -->
+  <mat-card>
+    <form
+      class="searchbar"
+      fxLayout="row"
+      fxLayoutAlign="center center"
+      fxLayoutGap="10px"
+    >
+      <i class="fas fa-search"></i>
+      <input
+        class="searchbar-bar"
+        type="text"
+        placeholder="Search for a mount"
+        [formControl]="control"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let mount of filteredMounts" [value]="mount">
+          {{ mount }}
+        </mat-option>
+      </mat-autocomplete>
+    </form>
+  </mat-card>
+</div>

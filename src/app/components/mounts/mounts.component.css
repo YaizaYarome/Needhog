@@ -8,3 +8,9 @@
 .search-div {
   padding: 30px;
 }
+
+.mount-card {
+  min-width: 340px;
+  max-height: 800px;
+  margin-bottom: 40px;
+}

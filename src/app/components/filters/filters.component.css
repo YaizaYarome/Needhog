@@ -1,14 +1,4 @@
-.filter-container {
-  width: 100%;
-  height: 100%;
-  background-color: rgb(46, 34, 59);
-}
-
-.dropdown-menu {
-  width: 12vw;
-  z-index: 999;
-}
-
+/***Select dropdown****/
 mat-label {
   color: black;
 }
@@ -22,4 +12,48 @@ mat-form-field {
   height: 50px;
   border-radius: 20px;
   background-color: rgb(187, 179, 233);
+}
+
+/***Searchbar****/
+mat-card {
+  background-color: black;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+mat-card i {
+  color: white;
+}
+
+.searchbar-bar {
+  width: 80%;
+  background-color: black;
+  color: white;
+  border: none;
+  z-index: 0;
+}
+
+/***Filters****/
+.filter-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(46, 34, 59);
+}
+
+.filter-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.filter-margin {
+  margin: 0 10px;
+}
+
+.showOnly,
+.filters {
+  background-color: transparent;
+  border: none;
+  color: white;
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Mounts } from 'src/app/interfaces/mounts';
+import { Mount, Mounts } from 'src/app/interfaces/mounts';
 
 @Component({
   selector: 'app-minion-card',
@@ -7,7 +7,7 @@ import { Mounts } from 'src/app/interfaces/mounts';
   styleUrls: ['./minion-card.component.css'],
 })
 export class MinionCardComponent implements OnInit {
-  @Input() mount!: Mounts;
+  @Input() mount!: Mount;
   constructor() {}
 
   ngOnInit(): void {}

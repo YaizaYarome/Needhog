@@ -1,5 +1,5 @@
 <div class="search-div" fxLayout="column" fxLayoutAlign="center center">
-  <app-filters></app-filters>
+  <app-filters [allMounts]="allMounts"></app-filters>
 </div>
 <div
   class="mount-grid"
@@ -8,6 +8,7 @@
   fxLayoutGap="30px grid"
 >
   <app-mount-card
+    class="mount-card"
     fxFlex="15"
     fxFlex.md="50"
     fxFlex.xs="50"

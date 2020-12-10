@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Mounts } from 'src/app/interfaces/mounts';
+import { EventEmitter } from '@angular/core';
+import { Component, Input, Output, OnInit } from '@angular/core';
+import { Mounts, Mount, Sources } from 'src/app/interfaces/mounts';
 
 @Component({
   selector: 'app-mount-card',
@@ -7,8 +8,19 @@ import { Mounts } from 'src/app/interfaces/mounts';
   styleUrls: ['./mount-card.component.css'],
 })
 export class MountCardComponent implements OnInit {
-  @Input() mount!: Mounts;
+  @Input() selected: boolean;
+  @Output() selectedChange = new EventEmitter<boolean>();
+
+  @Input() mount!: Mount;
+  texts: Sources[] = [];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.texts = this.mount.sources;
+  }
+
+  toggleFavourite() {
+    this.selected = !this.selected;
+    this.selectedChange.emit(this.selected);
+  }
 }

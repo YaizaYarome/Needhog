@@ -1,9 +1,9 @@
 export interface Mounts {
-  mount: Mounts[];
-  sources: Sources[];
+  results: Mount[];
+  count: number;
 }
 
-export interface Mounts {
+export interface Mount {
   id: number;
   name: string;
   description: string;
@@ -12,6 +12,7 @@ export interface Mounts {
   order: number;
   patch: string;
   tooltip: string;
+  sources: Sources[];
 }
 
 export interface Sources {

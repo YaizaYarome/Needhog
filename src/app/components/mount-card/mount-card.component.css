@@ -15,7 +15,7 @@
 
 i {
   font-size: 20px;
-  padding: 10px;
+  padding: 8px;
 }
 
 i:hover {
@@ -28,11 +28,36 @@ i:hover {
 }
 
 span {
-  padding: 1px 10px;
+  padding: 1px;
+}
+
+.source {
+  background-color: rgb(135, 116, 161);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.source-title {
+  font-variant: small-caps;
+  font-weight: 500;
+}
+
+.source-text {
+}
+
+.mat-ripple-element {
+  color: blue;
+}
+
+.mat-icon-button {
+  transition: transform 0.5s;
+}
+
+.chips {
+  width: 100%;
 }
 
 .patch {
-  width: 100%;
-  text-align: right;
-  font-weight: bold;
+  color: white;
+  background-color: rgb(62, 48, 88);
 }
