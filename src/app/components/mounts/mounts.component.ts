@@ -24,10 +24,13 @@ export class MountsComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
     this.mountsService.getMounts().subscribe(
       (respMounts) => {
         this.allMounts = respMounts.results;
+        console.log('thisAllMounts', this.allMounts);
         this.mounts = this.allMounts.slice(0, this.count);
       },
       (error) => console.log(error),

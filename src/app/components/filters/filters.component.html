@@ -78,6 +78,8 @@
         class="searchbar-bar"
         type="text"
         placeholder="Search for a mount"
+        matInput
+        [formControl]="searchBarFilter"
         [matAutocomplete]="auto"
       />
       <mat-autocomplete #auto="matAutocomplete">

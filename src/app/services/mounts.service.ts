@@ -7,12 +7,16 @@ import { Mounts, Mount } from '../interfaces/mounts';
   providedIn: 'root',
 })
 export class MountsService {
-  filter(arg0: (mount: any) => boolean): string[] {
-    throw new Error('Method not implemented.');
+  searchByString(): Observable<Mounts> {
+    return this.http.get<any>(
+      this.apiUrl + this.stringSearchUrl + this.searchBarString
+    );
   }
 
   private apiUrl: string = 'https://ffxivcollect.com/api/';
   private mountUrl: string = 'mounts';
+  private stringSearchUrl: string = '?name_en_cont=';
+  private searchBarString: string;
 
   constructor(private http: HttpClient) {}
 

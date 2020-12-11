@@ -22,11 +22,14 @@ export class FiltersComponent implements OnInit {
     'Shadowbringers',
   ];
 
-  mounts: MountsService;
-  searchBarFilter: FormControl;
-  filteredMounts: Observable<string[]>;
+  mounts: Mount[];
+  searchBarFilter = new FormControl();
+  filteredMounts: Mount[];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.filteredMounts = this.allMounts;
+    console.log(this.filteredMounts);
+  }
   checked = false;
   unchecked = true;
   labelPosition: 'before' | 'after' = 'after';
