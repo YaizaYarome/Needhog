@@ -11,29 +11,27 @@ export class MountsComponent implements OnInit {
   public mounts: Mount[] = [];
   public allMounts: Mount[] = [];
   public mountsData: Mounts;
-  count: number = 0;
-  counter: number = 0;
+  count: number = 10;
 
   constructor(private mountsService: MountsService) {}
+
+  onScroll() {
+    console.log('has scrolleado');
+    if (this.mounts.length < this.allMounts.length) {
+      this.count++;
+    } else {
+      console.log('You reached the end, Kupó!');
+    }
+  }
 
   ngOnInit(): void {
     this.mountsService.getMounts().subscribe(
       (respMounts) => {
-        this.mountsData = respMounts;
-        this.allMounts = this.mountsData.results;
-        this.count = this.mountsData.count;
+        this.allMounts = respMounts.results;
+        this.mounts = this.allMounts.slice(0, this.count);
       },
       (error) => console.log(error),
-      () => this.draw10Mounts()
+      () => console.log(this.mounts)
     );
-  }
-
-  draw10Mounts() {
-    if (this.counter <= this.count) {
-      this.mounts = this.mounts.concat(
-        this.allMounts.slice(this.counter, this.counter + 10)
-      );
-      this.counter += 10;
-    }
   }
 }

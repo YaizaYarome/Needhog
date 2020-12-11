@@ -22,30 +22,12 @@ export class FiltersComponent implements OnInit {
     'Shadowbringers',
   ];
 
-  control = new FormControl();
   mounts: MountsService;
+  searchBarFilter: FormControl;
   filteredMounts: Observable<string[]>;
 
-  constructor() {}
-
-  ngOnInit() {
-    this.filteredMounts = this.control.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value))
-    );
-  }
+  ngOnInit() {}
   checked = false;
   unchecked = true;
   labelPosition: 'before' | 'after' = 'after';
-
-  private _filter(value: string): string[] {
-    const filterValue = this._normalizeValue(value);
-    return this.mounts.filter((mount) =>
-      this._normalizeValue(mount).includes(filterValue)
-    );
-  }
-
-  private _normalizeValue(value: string): string {
-    return value.toLowerCase().replace(/\s/g, '');
-  }
 }

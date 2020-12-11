@@ -6,6 +6,10 @@
   fxLayout="row wrap"
   fxLayoutAlign="center"
   fxLayoutGap="30px grid"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
 >
   <app-mount-card
     class="mount-card"

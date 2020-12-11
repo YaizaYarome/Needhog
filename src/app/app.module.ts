@@ -21,6 +21,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MinionCardComponent } from './components/minion-card/minion-card.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MinionCardComponent } from './components/minion-card/minion-card.compon
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
