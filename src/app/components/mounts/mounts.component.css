@@ -14,3 +14,8 @@
   max-height: 800px;
   margin-bottom: 40px;
 }
+
+.go-up-button {
+  position: fixed;
+  margin-right: 20px;
+}

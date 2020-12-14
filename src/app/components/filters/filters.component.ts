@@ -2,7 +2,6 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
-import { MountsService } from 'src/app/services/mounts.service';
 import { Mount } from 'src/app/interfaces/mounts';
 
 @Component({
@@ -22,15 +21,34 @@ export class FiltersComponent implements OnInit {
     'Shadowbringers',
   ];
 
-  mounts: Mount[];
+  mountSearch: Observable<string>;
   searchBarFilter = new FormControl();
-  filteredMounts: Mount[];
+  filteredMounts: Observable<Mount[]>;
 
   ngOnInit() {
-    this.filteredMounts = this.allMounts;
-    console.log(this.filteredMounts);
+    this.mountSearch = this.searchBarFilter.valueChanges.pipe(
+      startWith(''),
+      map((mount) => this._filter(mount))
+    );
   }
+
   checked = false;
   unchecked = true;
-  labelPosition: 'before' | 'after' = 'after';
+  labelPosition: 'alfabetical' | 'release' | 'order';
+
+  _filter(nombre): any {
+    console.log(nombre);
+    const filterValue = nombre.toLowerCase() || '';
+
+    const searchResult = this.allMounts.filter((mount) =>
+      mount.name.toLowerCase().includes(filterValue)
+    );
+    if (searchResult.length === 0) {
+      this.filteredMounts.pipe().subscribe((res) => {
+        (this.allMounts = res), console.log(res);
+      });
+    } else {
+      this.allMounts = searchResult;
+    }
+  }
 }

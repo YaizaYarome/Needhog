@@ -18,3 +18,16 @@ mat-sidenav-content {
 main {
   overflow: hidden;
 }
+
+.containerScroll {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}

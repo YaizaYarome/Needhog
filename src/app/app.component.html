@@ -3,7 +3,7 @@
     <mat-sidenav #sidenav role="navigation">
       <app-side-nav-list (sidenavClose)="sidenav.close()"></app-side-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content class="containerScroll">
       <app-header-toolbar
         (sidenavToggle)="sidenav.toggle()"
       ></app-header-toolbar>

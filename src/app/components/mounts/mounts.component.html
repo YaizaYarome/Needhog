@@ -1,12 +1,24 @@
 <div class="search-div" fxLayout="column" fxLayoutAlign="center center">
   <app-filters [allMounts]="allMounts"></app-filters>
+  <button (click)="orderByRelease()">SORT</button>
+  <div style="background-color: white"></div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="end end">
+  <button mat-fab color="primary" class="go-up-button">
+    <i class="fas fa-home"></i>
+  </button>
 </div>
 <div
   class="mount-grid"
   fxLayout="row wrap"
   fxLayoutAlign="center"
   fxLayoutGap="30px grid"
-  infinite-scroll
+  infiniteScroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="150"
+  [infiniteScrollContainer]="containerMonturas"
+  [fromRoot]="true"
   (scrolled)="onScroll()"
 >
   <app-mount-card
@@ -17,5 +29,6 @@
     fxLayout="stretch"
     *ngFor="let mount of mounts"
     [mount]="mount"
-  ></app-mount-card>
+  >
+  </app-mount-card>
 </div>

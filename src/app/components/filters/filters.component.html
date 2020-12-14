@@ -79,12 +79,13 @@
         type="text"
         placeholder="Search for a mount"
         matInput
-        [formControl]="searchBarFilter"
         [matAutocomplete]="auto"
+        #search
+        (keyup)="_filter(search.value)"
       />
       <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let mount of filteredMounts" [value]="mount">
-          {{ mount }}
+        <mat-option *ngFor="let mount of allMounts" [value]="mountSearch">
+          {{ mount.name }}
         </mat-option>
       </mat-autocomplete>
     </form>
