@@ -10,14 +10,21 @@
       >
         <section class="filter-section">
           <label class="filter-margin">Align:</label>
-          <mat-radio-group color="primary" [(ngModel)]="labelPosition">
-            <mat-radio-button class="filter-margin" value="1"
+          <mat-radio-group
+            color="primary"
+            [(ngModel)]="OrderBy"
+            (ngModelChange)="orderBySelected($event)"
+          >
+            <mat-radio-button
+              class="filter-margin"
+              [checked]="true"
+              value="alphabetical"
               >Alphabetical</mat-radio-button
             >
-            <mat-radio-button class="filter-margin" value="2"
+            <mat-radio-button class="filter-margin" value="release"
               >Release date</mat-radio-button
             >
-            <mat-radio-button class="filter-margin" value="3"
+            <mat-radio-button class="filter-margin" value="order"
               >Number</mat-radio-button
             >
           </mat-radio-group>

@@ -3,6 +3,7 @@ import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 import { Mount } from 'src/app/interfaces/mounts';
+import { SortingService } from 'src/app/services/sorting.service';
 
 @Component({
   selector: 'app-filters',
@@ -21,6 +22,7 @@ export class FiltersComponent implements OnInit {
     'Shadowbringers',
   ];
 
+  OrderBy: string;
   mountSearch: Observable<string>;
   searchBarFilter = new FormControl();
   filteredMounts: Observable<Mount[]>;
@@ -33,8 +35,7 @@ export class FiltersComponent implements OnInit {
   }
 
   checked = false;
-  unchecked = true;
-  labelPosition: 'alfabetical' | 'release' | 'order';
+  unchecked = false;
 
   _filter(nombre): any {
     console.log(nombre);
@@ -50,5 +51,13 @@ export class FiltersComponent implements OnInit {
     } else {
       this.allMounts = searchResult;
     }
+  }
+
+  orderBySelected(event) {
+    this.allMounts;
+  }
+
+  getNames() {
+    this.allMounts.filter((mount) => mount.name);
   }
 }

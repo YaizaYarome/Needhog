@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Minions } from 'src/app/interfaces/minions';
-import { MinionsService } from 'src/app/services/minions.service';
+import { SortingService } from 'src/app/services/sorting.service';
 
 @Component({
   selector: 'app-minions',
@@ -10,7 +10,7 @@ import { MinionsService } from 'src/app/services/minions.service';
 export class MinionsComponent implements OnInit {
   public minions: Minions[] = [];
 
-  constructor(private mountsService: MinionsService) {}
+  constructor(private mountsService: SortingService) {}
 
   ngOnInit(): void {
     this.mountsService.get10Minions().subscribe(
