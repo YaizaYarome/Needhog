@@ -1,4 +1,8 @@
-<form [formGroup]="contactForm" (ngSubmit)="sendForm()" novalidate>
+<form
+  [formGroup]="contactForm"
+  (ngSubmit)="sendForm(contactForm.value)"
+  novalidate
+>
   <!-- Campo Name -->
   <div
     class="short-fields"

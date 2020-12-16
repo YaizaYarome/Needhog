@@ -22,6 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MinionCardComponent } from './components/minion-card/minion-card.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     FormsModule,
     MatDialogModule,
     InfiniteScrollModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
