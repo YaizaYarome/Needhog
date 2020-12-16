@@ -16,12 +16,11 @@ input {
   padding: 12px;
   border-radius: 20px;
   border: none;
-
   background-color: rgb(187, 179, 233);
 }
 
 mat-form-field {
-  height: 40px;
+  height: 50px;
   border-radius: 20px;
   width: 50%;
   padding-top: 1px;
@@ -32,7 +31,6 @@ mat-form-field {
 
 mat-option {
   background-color: rgb(187, 179, 233) !important;
-  border-bottom: 1px solid rgb(156, 100, 170) !important;
 }
 
 mat-option:hover {

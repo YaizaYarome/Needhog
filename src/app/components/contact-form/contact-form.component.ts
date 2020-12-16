@@ -9,6 +9,9 @@ import {
 import { Location } from '@angular/common';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { HttpClient } from '@angular/common/http';
+import { SendFormServiceService } from 'src/app/services/send-form-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactFormDialogComponent } from '../contact-form-dialog/contact-form-dialog.component';
 
 @Component({
   selector: 'app-contact-form',
@@ -24,7 +27,9 @@ export class ContactFormComponent implements OnInit {
   constructor(
     private location: Location,
     private db: AngularFireDatabase,
-    private http: HttpClient
+    private sendFormService: SendFormServiceService,
+    private http: HttpClient,
+    public dialog: MatDialog
   ) {
     this.contactForm = this.createFormGroup();
   }
@@ -59,25 +64,10 @@ export class ContactFormComponent implements OnInit {
   resetForm() {
     this.contactForm.reset();
   }
-  sendForm(postData: {
-    name: string;
-    server: string;
-    datacenter: string;
-    email: string;
-    questionType: string;
-    message: string;
-  }) {
+
+  sendForm() {
     if (this.contactForm.valid) {
-      alert('Message sent, kupó! ');
-      console.log(this.contactForm.value);
-      this.http
-        .post(
-          'https://eoi-proyect-default-rtdb.europe-west1.firebasedatabase.app/form.json',
-          postData
-        )
-        .subscribe((responseData) => {
-          console.log(responseData);
-        });
+      this.sendFormService.saveDataForm(this.contactForm.value);
     } else {
       alert("Your message hasn't been sent, kupó...");
     }
@@ -85,8 +75,8 @@ export class ContactFormComponent implements OnInit {
   }
 
   changeQuestion(e) {
-    console.log(this.contactForm.controls['questionType'].value);
-    this.questionType.setValue(e.target.value, {
+    console.log(e.value);
+    this.questionType.setValue(e.value, {
       onlySelf: true,
     });
   }
@@ -108,5 +98,17 @@ export class ContactFormComponent implements OnInit {
   }
   get email() {
     return this.contactForm.get('email');
+  }
+
+  openDialog() {
+    this.dialog.open(ContactFormDialogComponent, {
+      width: '400px',
+    });
+  }
+
+  openTerms() {
+    this.dialog.open(ContactFormDialogComponent, {
+      width: '400px',
+    });
   }
 }

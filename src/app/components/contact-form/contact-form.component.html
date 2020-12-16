@@ -1,8 +1,4 @@
-<form
-  [formGroup]="contactForm"
-  (ngSubmit)="sendForm(contactForm.value)"
-  novalidate
->
+<form [formGroup]="contactForm" (ngSubmit)="sendForm()" novalidate>
   <!-- Campo Name -->
   <div
     class="short-fields"
@@ -104,6 +100,7 @@
   </div>
 
   <!-- Campo Dropdown -->
+  <!---->
   <div
     class="field"
     fxLayout="column"
@@ -113,32 +110,18 @@
     <label> Type of Question </label>
     <mat-form-field appearance="fill">
       <mat-label>Select the type of question you have</mat-label>
-      <mat-select
-        formControlName="questionType"
-        (change)="changeQuestion($event)"
-      >
+      <mat-select (selectionChange)="changeQuestion($event)">
         <mat-option
           class="mat-bg"
           *ngFor="let question of questions"
-          [value]="questionType"
+          value="{{ question }}"
         >
           {{ question }}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <!--
-    <div *ngIf="questionType.invalid">
-      <div
-        class="text-danger"
-        *ngIf="
-          questionType.errors?.required &&
-          (questionType.dirty || questionType.touched)
-        "
-      >
-        Please select a type of question.
-      </div>
-    </div>
--->
+
+    <!-- Términos y condiciones -->
 
     <!-- Campo message -->
 
@@ -160,7 +143,12 @@
     </div>
   </div>
   <div fxLayout="column" fxLayoutAlign="center end">
-    <button class="button-form" type="submit" [disabled]="contactForm.invalid">
+    <button
+      class="button-form"
+      type="submit"
+      [disabled]="!contactForm.valid"
+      (click)="openDialog()"
+    >
       send
     </button>
   </div>

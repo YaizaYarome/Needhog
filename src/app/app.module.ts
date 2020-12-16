@@ -25,6 +25,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
+import { ContactFormDialogComponent } from './components/contact-form-dialog/contact-form-dialog.component';
+import { FormTermsDialogComponent } from './components/form-terms-dialog/form-terms-dialog.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { environment } from 'src/environments/environment';
     FiltersComponent,
     ContactFormComponent,
     MinionCardComponent,
+    ContactFormDialogComponent,
+    FormTermsDialogComponent,
   ],
 
   imports: [

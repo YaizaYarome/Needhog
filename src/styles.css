@@ -25,3 +25,8 @@ body {
 .mat-form-field-underline {
   display: none;
 }
+
+.mat-dialog-container {
+  background-color: rgb(55, 35, 65);
+  color: white;
+}
