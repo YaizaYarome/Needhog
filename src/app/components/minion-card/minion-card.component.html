@@ -1,25 +1,45 @@
 <mat-card
-  class="card-item mat-elevation-30"
   fxLayout="column"
-  fxLayoutAlign="space-between stretch"
+  fxLayoutAlign="space-between end"
+  class="card-item mat-elevation-30"
 >
-  <mat-card-title class="card-title">
-    <span fxFlex="20">{{ mount.id }} </span>
-    <span fxFlex="65">{{ mount.name }}</span>
-  </mat-card-title>
+  <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+    <mat-card-title
+      class="card-title"
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+      fxLayoutGap="10px"
+    >
+      <span>{{ minion.id }} </span>
+      <span fxFlex="60">{{ minion.name }}</span>
 
-  <img mat-card-image src="{{ mount.image }}" />
+      <button mat-icon-button color="warn" (click)="toggleFavourite()">
+        <mat-icon *ngIf="selected">favorite</mat-icon>
+        <mat-icon *ngIf="!selected"> favorite_border</mat-icon>
+      </button>
+    </mat-card-title>
 
-  <mat-card-content fxLayout="space-between stretch">
-    <p class="tooltip-quote">
-      <q> {{ mount.tooltip }}</q>
-    </p>
-    <p>{{ mount.description }}</p>
-    <p>How to obtain: {{ mount.sources }}</p>
-    <p class="patch">Patch: {{ mount.patch }}</p>
-  </mat-card-content>
-  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between stretch">
-    <i class="fas fa-ban"></i>
-    <i class="fas fa-heart"></i>
-  </mat-card-actions>
+    <mat-card-content fxLayout="space-between stretch">
+      <img mat-card-image src="{{ minion.image }}" />
+      <p class="tooltip-quote">
+        <q> {{ minion.tooltip }}</q>
+      </p>
+      <p>{{ minion.description }}</p>
+      <mat-expansion-panel
+        class="source"
+        fxLayout="column"
+        fxLayoutAlign="start"
+      >
+        <mat-expansion-panel-header class="source-title"
+          >How to get it:</mat-expansion-panel-header
+        >
+        <span class="source-text" *ngFor="let text of texts" fxLayout="column">
+          ♦ {{ text.text }}
+        </span>
+      </mat-expansion-panel>
+    </mat-card-content>
+  </div>
+  <mat-chip-list class="chips">
+    <mat-chip class="patch"> Patch: {{ minion.patch }} </mat-chip>
+  </mat-chip-list>
 </mat-card>

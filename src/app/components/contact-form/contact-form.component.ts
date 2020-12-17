@@ -20,6 +20,7 @@ import { ContactFormDialogComponent } from '../contact-form-dialog/contact-form-
 })
 export class ContactFormComponent implements OnInit {
   contactForm: FormGroup;
+  class = 'field';
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   private noSpacesPattern: any = '/^((?!s{2,}).)*$/';
   questions: string[] = ['Mounts', 'Minions', 'Report an error', 'Others'];

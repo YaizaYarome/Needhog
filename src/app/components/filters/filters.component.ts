@@ -26,6 +26,7 @@ export class FiltersComponent implements OnInit {
   mountSearch: Observable<string>;
   searchBarFilter = new FormControl();
   filteredMounts: Observable<Mount[]>;
+  expansionPatch: any;
 
   ngOnInit() {
     this.mountSearch = this.searchBarFilter.valueChanges.pipe(
@@ -59,5 +60,26 @@ export class FiltersComponent implements OnInit {
 
   getNames() {
     this.allMounts.filter((mount) => mount.name);
+  }
+
+  orderByExpac(e) {
+    console.log(e.value);
+    this.expansionPatch.setValue;
+
+    const x = this.expansionPatch;
+    switch (true) {
+      case x < 3:
+        alert('A Realm Reborn');
+        break;
+      case x < 4:
+        console.log('Heavensward');
+        break;
+      case x < 5:
+        alert('Stormblood');
+        break;
+      case x > 5:
+        alert('Shadowbringers');
+        break;
+    }
   }
 }

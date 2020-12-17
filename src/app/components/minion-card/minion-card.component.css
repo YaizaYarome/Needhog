@@ -1,13 +1,14 @@
 .card-item {
   background: linear-gradient(
     180deg,
-    rgb(0, 0, 0) 28%,
-    rgb(94, 50, 33) 70%,
-    rgb(145, 124, 117) 100%
+    rgb(29, 5, 5) 38%,
+    rgb(75, 31, 10) 75%,
+    rgb(153, 107, 63) 100%
   );
   color: white;
   border-radius: 20px;
   box-shadow: 1px 1px 10px 3px #0e0b0b;
+  height: 100%;
 }
 .card-title {
   font-size: 20px;
@@ -15,7 +16,7 @@
 
 i {
   font-size: 20px;
-  padding: 10px;
+  padding: 8px;
 }
 
 i:hover {
@@ -28,11 +29,33 @@ i:hover {
 }
 
 span {
-  padding: 1px 10px;
+  padding: 1px;
+}
+
+.source {
+  background-color: rgb(177, 133, 83);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.source-title {
+  font-variant: small-caps;
+  font-weight: 500;
+}
+
+.mat-ripple-element {
+  color: blue;
+}
+
+.mat-icon-button {
+  transition: transform 0.5s;
+}
+
+.chips {
+  width: 100%;
 }
 
 .patch {
-  width: 100%;
-  text-align: right;
-  font-weight: bold;
+  color: white;
+  background-color: rgb(212, 142, 12);
 }

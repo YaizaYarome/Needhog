@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Mount, Mounts } from 'src/app/interfaces/mounts';
+import { EventEmitter } from '@angular/core';
+import { Component, Input, Output, OnInit } from '@angular/core';
+import { Minion, Sources } from 'src/app/interfaces/minions';
 
 @Component({
   selector: 'app-minion-card',
@@ -7,8 +8,19 @@ import { Mount, Mounts } from 'src/app/interfaces/mounts';
   styleUrls: ['./minion-card.component.css'],
 })
 export class MinionCardComponent implements OnInit {
-  @Input() mount!: Mount;
+  @Input() selected: boolean;
+  @Output() selectedChange = new EventEmitter<boolean>();
+
+  @Input() minion!: Minion;
+  texts: Sources[] = [];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.texts = this.minion.sources;
+  }
+
+  toggleFavourite() {
+    this.selected = !this.selected;
+    this.selectedChange.emit(this.selected);
+  }
 }

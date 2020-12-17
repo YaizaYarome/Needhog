@@ -14,6 +14,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
 
@@ -36,6 +37,7 @@ const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
     MatChipsModule,
     MatButtonModule,
     MatRippleModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     MaterialComponents,
@@ -54,6 +56,7 @@ const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
     MatChipsModule,
     MatButtonModule,
     MatRippleModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class MaterialModule {}

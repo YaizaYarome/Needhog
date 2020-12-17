@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Mount, Mounts } from 'src/app/interfaces/mounts';
+import { Mount } from 'src/app/interfaces/mounts';
 import { SortingService } from 'src/app/services/sorting.service';
 
 @Component({
@@ -35,4 +35,8 @@ export class MountsComponent implements OnInit {
   }
 
   orderByName() {}
+
+  backToTop() {
+    document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+  }
 }

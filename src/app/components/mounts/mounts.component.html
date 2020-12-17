@@ -1,10 +1,9 @@
 <div class="search-div" fxLayout="column" fxLayoutAlign="center center">
   <app-filters [allMounts]="allMounts"></app-filters>
-  <div style="background-color: white"></div>
 </div>
 
 <div fxLayout="row" fxLayoutAlign="end end">
-  <button mat-fab color="primary" class="go-up-button">
+  <button mat-fab color="primary" class="go-up-button" (click)="backToTop()">
     <i class="fas fa-home"></i>
   </button>
 </div>

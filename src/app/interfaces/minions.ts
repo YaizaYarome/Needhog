@@ -1,4 +1,9 @@
 export interface Minions {
+  results: Minion[];
+  count: number;
+}
+
+export interface Minion {
   id: number;
   name: string;
   description: string;
@@ -7,4 +12,10 @@ export interface Minions {
   order: number;
   patch: string;
   tooltip: string;
+  sources: Sources[];
+}
+
+export interface Sources {
+  text: any;
+  type: any;
 }

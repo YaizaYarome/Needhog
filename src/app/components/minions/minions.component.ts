@@ -9,14 +9,32 @@ import { SortingService } from 'src/app/services/sorting.service';
 })
 export class MinionsComponent implements OnInit {
   public minions: Minions[] = [];
+  public allMinions: Minions[] = [];
+  public count: number = 10;
+  public containerMinions = '.containerScroll';
 
-  constructor(private mountsService: SortingService) {}
+  constructor(private sortingService: SortingService) {}
 
   ngOnInit(): void {
-    this.mountsService.get10Minions().subscribe(
-      (respMounts) => (this.minions = respMounts.results),
+    this.sortingService.getMinions().subscribe(
+      (respMinions) => {
+        this.sortingService.itemsArray = this.allMinions;
+        this.sortingService.orderByName();
+        this.allMinions = respMinions.results;
+        this.minions = this.allMinions.slice(0, this.count);
+      },
       (error) => console.log(error),
-      () => console.log(this.minions)
+      () => console.log(this.allMinions)
     );
+  }
+
+  onScroll() {
+    console.log('has scrolleado');
+    this.count = this.count + 10;
+    this.minions = this.allMinions.slice(0, this.count);
+  }
+
+  backToTop() {
+    document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
   }
 }

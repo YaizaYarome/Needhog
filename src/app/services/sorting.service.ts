@@ -19,6 +19,7 @@ export class SortingService {
   private stringSearchUrl: string = '?name_en_cont=';
   private searchBarString: string;
   public itemsArray = [];
+  public patchNumber: string;
 
   constructor(private http: HttpClient) {}
 
@@ -38,6 +39,11 @@ export class SortingService {
     return this.http.get<any>(this.apiUrl + this.minionUrl + '?limit=10');
   }
 
+  getMinionsByExpac(): Observable<any> {
+    return this.http.get<any>(
+      this.apiUrl + this.minionUrl + '&patch_gt=' + this.patchNumber
+    );
+  }
   /***** Sortings *****/
 
   orderByNumber() {

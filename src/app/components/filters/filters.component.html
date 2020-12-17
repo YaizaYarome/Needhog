@@ -31,12 +31,15 @@
         </section>
         <section>
           <mat-form-field appearance="fill">
-            <mat-label>Expansions</mat-label>
-            <mat-select [formControl]="expansionsList" multiple>
-              <mat-select-trigger *ngIf="expansionsList.value?.length > 1">
-                {{ expansionsList.value.length }} selected
-              </mat-select-trigger>
-              <mat-option *ngFor="let expansion of expansions">
+            <mat-label>Expansion</mat-label>
+            <mat-select
+              [formControl]="expansionsList"
+              (selectionChange)="orderByExpac($event)"
+            >
+              <mat-option
+                *ngFor="let expansion of expansions"
+                value="{{ expansion }}"
+              >
                 {{ expansion }}
               </mat-option>
             </mat-select>

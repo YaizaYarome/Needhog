@@ -2,9 +2,23 @@
   padding: 30px;
 }
 
-.mount-grid {
+.minion-grid {
   box-sizing: border-box;
   padding-top: 30px;
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.minion-card {
+  height: 100%;
+  min-width: 340px;
+  max-height: 1900px;
+  margin-bottom: 10px;
+}
+
+.go-up-button {
+  right: 30px;
+  bottom: 20px;
+  position: fixed;
+  z-index: 999;
 }

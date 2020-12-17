@@ -2,13 +2,9 @@
   color: rgb(250, 103, 213);
 }
 
-label {
+h2 {
   color: rgb(201, 158, 79);
   font-size: 1.4rem;
-}
-
-.field {
-  width: 100%;
 }
 
 input {
@@ -22,7 +18,7 @@ input {
 mat-form-field {
   height: 50px;
   border-radius: 20px;
-  width: 50%;
+  width: 100%;
   padding-top: 1px;
   padding-bottom: 10px;
   padding-left: 20px;
