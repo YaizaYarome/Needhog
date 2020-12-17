@@ -1,0 +1,21 @@
+.disclaimer {
+  text-align: center;
+}
+
+.disclaimer h1 {
+  font-weight: bold;
+  color: rgb(241, 197, 50);
+}
+
+.disclaimer h3 {
+  font-weight: 500;
+  color: rgb(199, 147, 229);
+  font-size: 20px;
+  font-variant: small-caps;
+}
+
+.disclaimer h4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: coral;
+}

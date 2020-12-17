@@ -1,10 +1,14 @@
 .text-danger {
   color: rgb(250, 103, 213);
+  text-align: center;
 }
 
 h2 {
   color: rgb(201, 158, 79);
   font-size: 1.4rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input {
@@ -13,35 +17,54 @@ input {
   border-radius: 20px;
   border: none;
   background-color: rgb(187, 179, 233);
+  margin-bottom: 20px;
+  min-width: 300px;
 }
 
+.form-row-input {
+  margin: 20px;
+}
+
+.termLink {
+  text-decoration: none;
+  color: rgb(238, 185, 41);
+}
 mat-form-field {
   height: 50px;
   border-radius: 20px;
-  width: 100%;
+  width: 50%;
+  min-width: 300px;
   padding-top: 1px;
   padding-bottom: 10px;
-  padding-left: 20px;
+  text-align: center;
   background-color: rgb(187, 179, 233);
+  margin-bottom: 20px;
 }
 
 mat-option {
   background-color: rgb(187, 179, 233) !important;
+  text-align: center;
 }
 
 mat-option:hover {
   background-color: orange !important;
 }
 
+mat-checkbox {
+  color: white;
+  margin-top: 10px;
+}
+
 textarea {
-  min-width: 100%;
-  min-height: 180px;
+  min-width: 80%;
+  min-height: 140px;
   border-radius: 10px;
   font-family: sans-serif;
   padding: 10px;
   border: none;
   font-size: 0.9rem;
   background-color: rgb(187, 179, 233);
+  margin-bottom: 10px;
 }
 
 .short-fields {

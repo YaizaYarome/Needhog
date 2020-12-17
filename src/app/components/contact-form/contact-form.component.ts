@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { SendFormServiceService } from 'src/app/services/send-form-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactFormDialogComponent } from '../contact-form-dialog/contact-form-dialog.component';
+import { FormTermsDialogComponent } from '../form-terms-dialog/form-terms-dialog.component';
 
 @Component({
   selector: 'app-contact-form',
@@ -24,6 +25,7 @@ export class ContactFormComponent implements OnInit {
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   private noSpacesPattern: any = '/^((?!s{2,}).)*$/';
   questions: string[] = ['Mounts', 'Minions', 'Report an error', 'Others'];
+  public readTerms: boolean = false;
 
   constructor(
     private location: Location,
@@ -59,6 +61,7 @@ export class ContactFormComponent implements OnInit {
         Validators.minLength(5),
         Validators.maxLength(500),
       ]),
+      terms: new FormControl('false', [Validators.requiredTrue]),
     });
   }
 
@@ -101,6 +104,10 @@ export class ContactFormComponent implements OnInit {
     return this.contactForm.get('email');
   }
 
+  get terms() {
+    return this.contactForm.get('terms');
+  }
+
   openDialog() {
     this.dialog.open(ContactFormDialogComponent, {
       width: '400px',
@@ -108,8 +115,9 @@ export class ContactFormComponent implements OnInit {
   }
 
   openTerms() {
-    this.dialog.open(ContactFormDialogComponent, {
-      width: '400px',
+    this.dialog.open(FormTermsDialogComponent, {
+      width: '700px',
     });
+    this.readTerms = !this.readTerms;
   }
 }

@@ -1,13 +1,11 @@
-.container {
+.form-body {
   background: linear-gradient(
     0deg,
     rgba(66, 60, 99, 1) 0%,
     rgba(28, 21, 46, 1) 100%
   );
-  border-radius: 30px;
-  width: 100%;
-  margin: 10px 10px;
-  padding: 20px;
+  padding: 40px;
+  min-width: 70%;
 }
 
 .form-title {
@@ -29,4 +27,8 @@ h3 {
 h5 {
   color: rgb(143, 128, 150);
   font-size: 0.8rem;
+}
+
+.container {
+  margin: 20px;
 }

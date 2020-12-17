@@ -1,69 +1,88 @@
-<form [formGroup]="contactForm" (ngSubmit)="sendForm()" novalidate>
+<form
+  [formGroup]="contactForm"
+  (ngSubmit)="sendForm()"
+  novalidate
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
   <!-- Campo Name -->
   <div
     fxLayout="row"
-    fxLayoutAlign="center"
+    fxLayoutAlign="start center"
     fxLayoutGap="40px"
     fxLayout.lt-md="column"
   >
-    <h2>Nickname</h2>
-    <input type="text" formControlName="name" placeholder="Type your name..." />
-    <div *ngIf="name.invalid && (name.dirty || name.touched)">
-      <div class="text-danger" *ngIf="name.errors.required">
-        Type your name, please
+    <div>
+      <h2>Nickname</h2>
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Type your name..."
+      />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div class="text-danger" *ngIf="name.errors.required">
+          Type your name, please
+        </div>
+        <div class="text-danger" *ngIf="name.errors.minlength">
+          The name must have 5 characters
+        </div>
       </div>
-      <div class="text-danger" *ngIf="name.errors.minlength">
-        The name must have 5 characters
+
+      <!-- Campo server -->
+
+      <h2>Server</h2>
+      <input
+        type="text"
+        formControlName="server"
+        placeholder="Type your server..."
+      />
+      <div *ngIf="server.invalid && (server.dirty || server.touched)">
+        <div class="text-danger" *ngIf="server.errors.required">
+          Type your server, please
+        </div>
+        <div class="text-danger" *ngIf="server.errors.minlength">
+          Type a valid server, please
+        </div>
       </div>
     </div>
-
-    <!-- Campo server -->
-
-    <h2>Nickname</h2>
-    <input
-      type="text"
-      formControlName="server"
-      placeholder="Type your server..."
-    />
-    <div *ngIf="server.invalid && (server.dirty || server.touched)">
-      <div class="text-danger" *ngIf="server.errors.required">
-        Type your server, please
-      </div>
-      <div class="text-danger" *ngIf="server.errors.minlength">
-        Type a valid server, please
-      </div>
-    </div>
-
     <!-- Campo datacenter -->
 
-    <h2>Nickname</h2>
-    <input
-      type="text"
-      formControlName="datacenter"
-      placeholder="Type your datacenter..."
-    />
-    <div *ngIf="datacenter.invalid && (datacenter.dirty || datacenter.touched)">
-      <div class="text-danger" *ngIf="datacenter.errors.required">
-        Type your datacenter, please
+    <div>
+      <h2>Datacenter</h2>
+      <input
+        type="text"
+        formControlName="datacenter"
+        placeholder="Type your datacenter..."
+      />
+      <div
+        *ngIf="datacenter.invalid && (datacenter.dirty || datacenter.touched)"
+      >
+        <div class="text-danger" *ngIf="datacenter.errors.required">
+          Type your datacenter, please
+        </div>
+        <div class="text-danger" *ngIf="datacenter.errors.minlength">
+          Type a valid datacenter
+        </div>
       </div>
-      <div class="text-danger" *ngIf="datacenter.errors.minlength">
-        Type a valid datacenter
-      </div>
-    </div>
 
-    <!-- Campo Email -->
+      <!-- Campo Email -->
 
-    <h2>Nickname</h2>
-    <input type="email" formControlName="email" placeholder="Type your email" />
-    <div *ngIf="email.invalid && (email.dirty || email.touched)">
-      <div class="text-danger" *ngIf="email.errors.required">
-        Type email, please
-      </div>
-      <div class="text-danger" *ngIf="email.errors.minlength">
-        Type a valid email, please
-      </div>
-      <div class="text-danger" *ngIf="email.errors.pattern">
-        The email must have a valid format
+      <h2>Email</h2>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Type your email"
+      />
+      <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div class="text-danger" *ngIf="email.errors.required">
+          Type your email, please
+        </div>
+        <div class="text-danger" *ngIf="email.errors.minlength">
+          Type a valid email, please
+        </div>
+        <div class="text-danger" *ngIf="email.errors.pattern">
+          The email must have a valid format
+        </div>
       </div>
     </div>
   </div>
@@ -71,7 +90,7 @@
   <!-- Campo Dropdown -->
   <!---->
 
-  <h2>Nickname</h2>
+  <h2>Question Type</h2>
   <mat-form-field appearance="fill">
     <mat-label>Select the type of question you have</mat-label>
     <mat-select (selectionChange)="changeQuestion($event)">
@@ -85,11 +104,9 @@
     </mat-select>
   </mat-form-field>
 
-  <!-- Términos y condiciones -->
-
   <!-- Campo message -->
 
-  <h2>Nickname</h2>
+  <h2>Message</h2>
   <textarea
     formControlName="message"
     placeholder="Type your message..."
@@ -105,8 +122,31 @@
       The message can´t have more than 500 characters
     </div>
   </div>
+  <!-- Términos y condiciones -->
 
-  <div fxLayout="column" fxLayoutAlign="center end">
+  <div>
+    <mat-checkbox
+      fxLayoutAlign="start"
+      [disabled]="!readTerms"
+      #tc
+      required
+      for="terms"
+    >
+      <span>
+        By clicking this checkbox you confirm that you have read our
+        <a [routerLink]="" (click)="openTerms()" class="termLink">
+          terms and conditions
+        </a>
+      </span></mat-checkbox
+    >
+    <div *ngIf="!tc.checked">
+      <div class="text-danger">
+        You cannot send a message if you don't agree to our terms.
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="column" fxFlexAlign="end">
     <button
       class="button-form"
       type="submit"
