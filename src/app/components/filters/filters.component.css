@@ -44,7 +44,7 @@ mat-card i {
   display: flex;
   align-content: center;
   align-items: center;
-  height: 60px;
+  height: 100%;
 }
 
 .filter-margin {
@@ -56,4 +56,10 @@ mat-card i {
   background-color: transparent;
   border: none;
   color: white;
+}
+
+.filter-h2 {
+  color: orange;
+  text-align: center;
+  margin-bottom: 10px;
 }

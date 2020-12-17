@@ -1,6 +1,7 @@
 .text-danger {
   color: rgb(250, 103, 213);
   text-align: center;
+  margin-top: 10px;
 }
 
 h2 {
@@ -17,8 +18,8 @@ input {
   border-radius: 20px;
   border: none;
   background-color: rgb(187, 179, 233);
-  margin-bottom: 20px;
-  min-width: 300px;
+  margin-bottom: 10px;
+  min-width: 280px;
 }
 
 .form-row-input {
@@ -38,7 +39,7 @@ mat-form-field {
   padding-bottom: 10px;
   text-align: center;
   background-color: rgb(187, 179, 233);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 mat-option {
@@ -93,4 +94,9 @@ textarea {
 .button-form:enabled:hover {
   background-color: purple;
   color: white;
+}
+
+.checkboxArea {
+  width: 100%;
+  white-space: normal;
 }
